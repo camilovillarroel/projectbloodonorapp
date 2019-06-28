@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :healthworkers
   devise_for :users, controllers: { registrations:
     "users/registrations" }
   root to: "main_view#home"
