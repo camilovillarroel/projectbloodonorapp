@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  approved: false
+  question: one
+  option: one
+
+two:
+  approved: false
+  question: two
+  option: two

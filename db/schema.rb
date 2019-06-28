@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_180434) do
+ActiveRecord::Schema.define(version: 2019_06_28_183622) do
+
+  create_table "evaluations", force: :cascade do |t|
+    t.boolean "approved"
+    t.integer "question_id"
+    t.integer "option_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_evaluations_on_option_id"
+    t.index ["question_id"], name: "index_evaluations_on_question_id"
+  end
 
   create_table "healthworkers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +34,37 @@ ActiveRecord::Schema.define(version: 2019_06_28_180434) do
     t.string "institution"
     t.index ["email"], name: "index_healthworkers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_healthworkers_on_reset_password_token", unique: true
+  end
+
+  create_table "interviews", force: :cascade do |t|
+    t.boolean "evaluation"
+    t.integer "evaluation_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["evaluation_id"], name: "index_interviews_on_evaluation_id"
+    t.index ["user_id"], name: "index_interviews_on_user_id"
+  end
+
+  create_table "intitutions", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "content"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  evaluation: false
+  evaluation: one
+  user: one
+
+two:
+  evaluation: false
+  evaluation: two
+  user: two
