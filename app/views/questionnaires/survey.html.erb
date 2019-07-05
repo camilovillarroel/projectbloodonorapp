@@ -1,3 +1,12 @@
 <% @questions.each do |question|%>
-<%= question.content %>
+<div id="Q"></div>
+    <p><%= question.content %></p>
+    <% question.options.each do |option| %>
+        <p><%= option.content %></p>
+    <% end %>
+    <button id="B">Siguiente</button>
 <% end %>
+
+
+
+

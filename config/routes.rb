@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'locations/map'
   get 'questionnaires/survey'
   devise_for :healthworkers
   devise_for :users, controllers: { registrations:
