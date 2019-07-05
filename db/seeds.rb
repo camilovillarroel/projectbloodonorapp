@@ -14,4 +14,27 @@ option2 = Option.create({content: 'no', approved: false, question_id: 1})
 option3 = Option.create({content: 'si', approved: true, question_id: 2 })
 option4 = Option.create({content: 'no', approved: false, question_id: 2})
 
+addresses = 
+"Av. Zañartu #1085, Independencia
+Av. Santa Rosa #1234, Santiago
+Portugal #125, Santiago
+Camino Rinconada #1201, Maipú
+Av. Salvador #364, Providencia
+Av. Las Torres #5150, Peñalolén
+Gran Avenida #3204, San Miguel
+Av. Vitacura #0115, Providencia
+Av. Concha y Toro #3459, Puente Alto
+Esperanza #2150, San Ramón
+Av. Froilán Roa #6524, La Florida
+Huérfanos #3255, Santiago
+San Martín #771, Santiago
+"
+
+Institution.destroy_all
+addresses = addresses.split("\n")
+addresses.each do |address|
+    Institution.create!(name: Faker::Name.name, address:
+address)
+ sleep 1
+end
 
