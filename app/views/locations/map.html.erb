@@ -1,2 +1,51 @@
-<h1>Locations#map</h1>
-<p>Find me in app/views/locations/map.html.erb</p>
+<div style='width: 800px;'>
+ <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script>
+
+handler = Gmaps.build('Google');
+handler.buildMap({
+     provider: {}, internal: {id: 'map'}});
+
+navigator.geolocation.getCurrentPosition(setPosition);
+function setPosition(position) {
+        handler.getMap().setCenter({lat:position.coords.latitude, lng:position.coords.longitude});
+        var myLatlng = new google.maps.LatLng({lat:position.coords.latitude, lng:position.coords.longitude});
+        var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: handler.getMap(),
+        title:"Hello World!"
+    });
+        }
+</script>
+
+
+
+
+
+<%# <script>
+$(document).ready(function(){
+var x = document.getElementById('map');
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getAddress);
+} else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+}
+function getAddress(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    $.ajax({
+        url: '/locations/find_address',
+        type: 'GET',
+        dataType: 'json',
+        data: {latitude: latitude, longitude: longitude}
+    })
+    .done(function(data) {
+        x.innerHTML = data.address;
+    });
+};
+});
+
+</script> %>

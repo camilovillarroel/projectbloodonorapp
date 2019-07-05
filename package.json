@@ -2,6 +2,7 @@
   "name": "bloodonorapp",
   "private": true,
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "underscore": "^1.9.1"
   }
 }
