@@ -7,8 +7,19 @@
     <title>Portal</title>
 </head>
 <body>
+<div class="card text-center">
+  <div class="card-header">
+    ¡Bienvenido!
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Estas a un paso de salvar vidas</h5>
+    <p class="card-text">Nos alegra muchísimo que estés dispuesto a colaborar con la salud de la comunidad. A continuación puedes acceder a un simulación de entrevista que despejará tus dudas (si no estás seguro de poder donar tu sangre). </p>
+    <%= link_to 'Entrevista de donación', questionnaires_survey_path, class:"btn btn-success btn-lg" %>
+    <p class="card-text">También puedes acceder directamente a revisar los sitios de donación más cercanos a tu localización. </p>
+    <%= link_to 'Localiza lugares de donación', locations_map_path, class:"btn btn-danger btn-lg" %>
 
-<%= link_to 'Entrevista de donación', questionnaires_survey_path, class:"btn btn-success btn-lg" %>
-<%= link_to 'Localiza lugares de donación', locations_map_path, class:"btn btn-danger btn-lg" %>
+  </div>
+</div>
+
 </body>
 </html>

@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    background-image: url("https://get.pxhere.com/photo/light-night-flower-love-heart-red-darkness-circle-human-body-font-organ-computer-wallpaper-40057.jpg");
+    height: auto;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position: relative;
+    }
