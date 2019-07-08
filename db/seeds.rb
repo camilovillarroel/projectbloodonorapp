@@ -12,11 +12,11 @@ Option.destroy_all
 question1 = Question.create({content: '¿tienes mas de 18?'})
 question2 = Question.create({content: '¿pesas mas de 50kg??'})
 
-option1 = Option.create({content: 'si', approved: true, question_id: 9 })
-option2 = Option.create({content: 'no', approved: false, question_id: 9})
+option1 = Option.create({content: 'si', approved: true, question_id: 11 })
+option2 = Option.create({content: 'no', approved: false, question_id: 11})
 
-option3 = Option.create({content: 'si', approved: true, question_id: 10 })
-option4 = Option.create({content: 'no', approved: false, question_id: 10})
+option3 = Option.create({content: 'si', approved: true, question_id: 12 })
+option4 = Option.create({content: 'no', approved: false, question_id: 12})
 
 addresses = 
 "Av. Zañartu #1085, Independencia

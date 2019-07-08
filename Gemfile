@@ -19,6 +19,7 @@ gem 'devise'
 gem 'faker'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem 'geocoder'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

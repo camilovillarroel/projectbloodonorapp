@@ -86,6 +86,7 @@ GEM
     faker (1.9.3)
       i18n (>= 0.7)
     ffi (1.11.1)
+    geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     gmaps4rails (2.1.2)
@@ -216,6 +217,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   faker
+  geocoder
   gmaps4rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
