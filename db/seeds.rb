@@ -5,14 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Question.destroy_all
+Option.destroy_all
+
 question1 = Question.create({content: '¿tienes mas de 18?'})
 question2 = Question.create({content: '¿pesas mas de 50kg??'})
 
-option1 = Option.create({content: 'si', approved: true, question_id: 1 })
-option2 = Option.create({content: 'no', approved: false, question_id: 1})
+option1 = Option.create({content: 'si', approved: true, question_id: 9 })
+option2 = Option.create({content: 'no', approved: false, question_id: 9})
 
-option3 = Option.create({content: 'si', approved: true, question_id: 2 })
-option4 = Option.create({content: 'no', approved: false, question_id: 2})
+option3 = Option.create({content: 'si', approved: true, question_id: 10 })
+option4 = Option.create({content: 'no', approved: false, question_id: 10})
 
 addresses = 
 "Av. Zañartu #1085, Independencia
@@ -30,10 +34,10 @@ Huérfanos #3255, Santiago
 San Martín #771, Santiago
 "
 
-Institution.destroy_all
+Intitution.destroy_all
 addresses = addresses.split("\n")
 addresses.each do |address|
-    Institution.create!(name: Faker::Name.name, address:
+    Intitution.create!(name: Faker::Name.name, address:
 address)
  sleep 1
 end

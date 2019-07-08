@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_05_153933) do
+ActiveRecord::Schema.define(version: 2019_07_08_005303) do
 
   create_table "evaluations", force: :cascade do |t|
     t.boolean "approved"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2019_07_05_153933) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "options", force: :cascade do |t|
