@@ -34,10 +34,27 @@ Huérfanos #3255, Santiago
 San Martín #771, Santiago
 "
 
+names = 
+"Complejo Hospitalario San José
+Hospital Clínico San Borja Arriarán
+Hospital de Urgencia Asistencia Pública Dr. Alejandro del Río
+Hospital El Carmen, Maipú
+Hospital Del Salvador
+Hospital Luis Tisné
+Hospital Barros Luco
+Centro Metropolitano de Sangre y Tejidos
+Complejo Hospitalario Dr. Sótero del Río
+Hospital Padre Hurtado
+Hospital Dra. Eloísa Díaz, La Florida
+Hospital San Juan de Dios, Santiago
+Instituto Traumatológico Dr. Teodoro Gebauer
+"
+
 Intitution.destroy_all
 addresses = addresses.split("\n")
-addresses.each do |address|
-    Intitution.create!(name: Faker::Name.name, address:
+names = names.split("\n")
+addresses.each_with_index do |address, index|
+    Intitution.create!(name: names[index], address:
 address)
  sleep 1
 end
