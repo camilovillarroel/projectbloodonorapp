@@ -6,17 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
 Question.destroy_all
 Option.destroy_all
 
-question1 = Question.create({content: '¿tienes mas de 18?'})
-question2 = Question.create({content: '¿pesas mas de 50kg??'})
+question1 = Question.create({content: '¿tienes mas de 18?'}) 
+    
+option1 = Option.create({content: 'si', approved: true, question_id: question1.id })
+option2 = Option.create({content: 'no', approved: false, question_id: question1.id})    
 
-option1 = Option.create({content: 'si', approved: true, question_id: 13 })
-option2 = Option.create({content: 'no', approved: false, question_id: 13})
 
-option3 = Option.create({content: 'si', approved: true, question_id: 14 })
-option4 = Option.create({content: 'no', approved: false, question_id: 14})
+question2 = Question.create({content: '¿pesas mas de 50kg??'}) 
+    
+option3 = Option.create({content: 'si', approved: true, question_id: question2.id })
+option4 = Option.create({content: 'no', approved: false, question_id: question2.id})
+
 
 addresses = 
 "Av. Zañartu #1085, Independencia
