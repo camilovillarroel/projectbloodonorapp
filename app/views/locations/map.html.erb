@@ -40,7 +40,7 @@ function setPosition(position) {
         var marker = new google.maps.Marker({
         position: myLatlng,
         map: handler.getMap(),
-        title:"Hello World!",
+        title:"Estás Aquí",
         icon: image
     });
     handler.getMap().setZoom(15);
@@ -50,9 +50,10 @@ function setPosition(position) {
   
   $(document).on('ready turbolinks:load', function() {
   $('[name="placetr"]').click(function(){
-      console.log($(this).data('address'));
+      //console.log($(this).data('address'));
       var address = ($(this).data('address'));
-
+      
+      console.log(address);
       function codeAddress() {
       //var address = $('[name="placetr"]').data('address');
       alert('hola');
@@ -64,10 +65,11 @@ function setPosition(position) {
       } else { 
         alert('pushaaaa no no nooooo');
       }
+      
 
-    });
+      });
   }
-
+  codeAddress(address);
       
       
   });
