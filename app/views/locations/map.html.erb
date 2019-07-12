@@ -1,7 +1,11 @@
-<div style='width: 100%; '>
- <div id="map" style='width: 100%; height: 400px;'></div>
+<div class="row">
+<div class="col-sm-12 col-lg-6">
+<div style='width: 100%; ' class="my-2">
+ <div id="map" style='width: 100%; height: 35rem;' class="rounded-lg"></div>
 </div>
-<table class='table table-hover my-3'>
+</div>
+<div class="col-sm-12 col-lg-6 ">
+<table class='table table-sm table-hover my-2 'style="cursor: pointer;" >
 <thead>
     <tr class='table-info'>
       <th>Institución</th>
@@ -19,7 +23,8 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
+</div>
 <script>
 
 handler = Gmaps.build('Google');
@@ -72,7 +77,8 @@ function setPosition(position) {
         });
         
         marker.setAnimation(google.maps.Animation.BOUNCE);
-        handler.getMap().setZoom(10);
+        
+        handler.getMap().setZoom(11);
         //handler.bounds.extendWith(markers);
         //handler.fitMapToBounds();
 
