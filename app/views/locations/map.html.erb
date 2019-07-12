@@ -4,14 +4,14 @@
 <table class='table table-hover my-3'>
 <thead>
     <tr class='table-info'>
-      <th>Name</th>
-      <th>Description</th>
+      <th>Institución</th>
+      <th>Dirección</th>
     </tr>
   </thead>
 
   <tbody>
     <% @institutions.each do |institution| %>
-      <tr class='table-light' id='<%= institution.id %>' data-address= "<%= institution.address %>" name="placetr">
+      <tr class='table-light' id='<%= institution.id %>' data-address= "<%= institution.address %>"  data-lat= "<%= institution.latitude %>" data-lng= "<%= institution.longitude %>" name="placetr">
         <td><%= institution.name %></td>
         <td><%= institution.address %></td>
         <td hidden=true>institution.lat</td>
@@ -42,8 +42,8 @@ function setPosition(position) {
         map: handler.getMap(),
         title:"Estás Aquí",
         icon: image
-    });
-    handler.getMap().setZoom(15);
+        });
+        handler.getMap().setZoom(15);
         marker.setAnimation(google.maps.Animation.BOUNCE);
 
   }
@@ -51,30 +51,55 @@ function setPosition(position) {
   $(document).on('ready turbolinks:load', function() {
   $('[name="placetr"]').click(function(){
       //console.log($(this).data('address'));
-      var address = ($(this).data('address'));
       
-      console.log(address);
-      function codeAddress() {
-      //var address = $('[name="placetr"]').data('address');
-      alert('hola');
-      var geocoder;
-      geocoder = new google.maps.Geocoder();
-      geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status == 'OK') {
-        handler.getMap().setCenter(results[0].geometry.location); 
-      } else { 
-        alert('pushaaaa no no nooooo');
-      }
+      var address = ($(this).data('address'));
+      var lat = ($(this).data('lat'));
+      var lng = ($(this).data('lng'));
+      handler.getMap().setCenter({lat:lat, lng:lng});
+
+
+        var balloon = {
+          url: '<%= asset_path('heart_balloon.png') %>',
+          size: new google.maps.Size(70, 70),
+          scaledSize: new google.maps.Size(50, 50)
+        };
+        var myLatlng = new google.maps.LatLng({lat:lat, lng:lng});
+        var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: handler.getMap(),
+        title:"Aquí",
+        icon: balloon
+        });
+        
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+        handler.getMap().setZoom(10);
+        //handler.bounds.extendWith(markers);
+        //handler.fitMapToBounds();
+
+
+      
+      // console.log(address);
+      // function codeAddress() {
+      // //var address = $('[name="placetr"]').data('address');
+      // alert('hola');
+      // var geocoder;
+      // geocoder = new google.maps.Geocoder();
+      // geocoder.geocode( { 'address': address}, function(results, status) {
+      // if (status == 'OK') {
+      //   handler.getMap().setCenter(results[0].geometry.location); 
+      // } else { 
+      //   alert('pushaaaa no no nooooo');
+      // }
       
 
       });
-  }
-  codeAddress(address);
+  
+  //codeAddress(address);
       
       
   });
 
-  });
+  
    
 
 

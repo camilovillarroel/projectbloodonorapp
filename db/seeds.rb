@@ -24,7 +24,7 @@ option4 = Option.create({content: 'no', approved: false, question_id: question2.
 
 
 addresses = 
-"Av. Zañartu #1085, Independencia
+"San José 1196, Independencia
 Av. Santa Rosa #1234, Santiago
 Portugal #125, Santiago
 Camino Rinconada #1201, Maipú
