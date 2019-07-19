@@ -3,4 +3,10 @@ class QuestionnairesController < ApplicationController
       @questions = Question.all
       @options = Option.all
   end
+
+  def eval
+    
+
+
+  end
 end
