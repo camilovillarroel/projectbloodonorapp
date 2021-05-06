@@ -3,6 +3,6 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.4.1",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   }
 }
